@@ -1,0 +1,66 @@
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  outline: 2px solid goldenrod;
+}
+
+.page-header {
+  background-color: palegreen;
+  text-align: center;
+}
+
+.page-header__title {
+  font-size: 22px;
+  padding: 10px 40px 0;
+}
+
+.page-header__nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 30px;
+  padding-bottom: 20px;
+}
+
+.page-header__nav button {
+  width: 30%;
+}
+
+@media screen and (max-width: 1200px) {
+  canvas {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+canvas {
+  outline: 2px solid goldenrod;
+}
+
+.game__info {
+  display: flex;
+  justify-content: space-between;
+  background-color: palegreen;
+  padding: 20px 15px;
+}
+
+.game__status span {
+  display: block;
+}
+
+.game__controls {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game__controls button {
+  width: 47%;  
+}

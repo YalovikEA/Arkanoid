@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>ARKANOID</title>
+</head>
+<body>
+
+  <header class="page-header container">
+    <h1 class="page-header__title">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h1>
+    <nav class="page-header__nav">
+      <button id="main" type="button" onclick='switchToMainPage()'>Main</button>
+      <button id="game" type="button" onclick='switchToGamePage()'>Game</button>
+      <button id="score" type="button" onclick='switchToScorePage()'>Score</button>
+    </nav>    
+  </header>
+
+  <main id="page-main" class="page-main">
+
+  </main>
+
+  <div id='IProgress' style='border: solid red 1px; width: 200px'>
+    <div id='IProgressPerc' style='background-color: red; height: 20px; width: 0%'></div>
+  </div>
+ 
+  <script src='http://fe.it-academy.by/JQ/jquery.js'></script>
+  <script src="js/SPA.js"></script>
+  
+</body>
+</html>
