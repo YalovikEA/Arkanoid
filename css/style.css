@@ -1,5 +1,6 @@
 body {
   background-color: lightgoldenrodyellow;
+  position: relative;
 }
 
 .container {
@@ -62,5 +63,66 @@ canvas {
 }
 
 .game__controls button {
-  width: 47%;  
+  width: 33%;
+}
+
+#IProgress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+}
+
+.popUp {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  max-width: 300px;
+  width: 100%; 
+} 
+
+.popUp:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: -2;
+}
+
+.popUp:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: lightseagreen;
+  border: 2px solid goldenrod;
+  z-index: -1;
+}
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.input {
+  width: 90%;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  padding: 5px 15px;
+}
+
+.btn__popup{
+  margin-bottom: 15px;
+  padding: 5px 10px;
 }

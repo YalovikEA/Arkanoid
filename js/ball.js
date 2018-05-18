@@ -59,27 +59,27 @@ var ball = {
           }            
         
         // this.speed += 0.1;
+        // this.run()
         player.speed += 0.1;
         brick.status--;
         grid.collision();
-        clickSound();
-        console.log(brick.status)
+        player.initSound();
       }        
     }
     // Столкновение с левой стеной
     if( this.x - this.r <= 0) {
       this.dx *= -1;
-      clickSound()
+      player.initSound()
     }
     // Столкновение с правой стеной
     if( this.x + this.r >= W) {
       this.dx *= -1;
-      clickSound();
+      player.initSound();
     }
     // Столкновение с потолком
     if( this.y - this.r <= 0) {
       this.dy *= -1;
-      clickSound();
+      player.initSound();
     }
     // Столкновение с ракеткой
     if (this.x-this.r + this.dx < player.x + player.w &&
@@ -95,7 +95,7 @@ var ball = {
       }
       this.dy *= -1;
       this.dx = player.dx || this.dx;
-      clickSound();
+      player.initSound();
     }
     // Столкновение с полом
     if ( this.y + this.r >= H ) {
@@ -103,11 +103,12 @@ var ball = {
       player.hp--;
       player.updateHp();
       player.play = false;
+      initPopup('К сожалению вы проиграли. Попробуйте еще раз!');
+      
 
       if( player.hp < 1) {
-        console.log('GAME OVER');
-        player.play = false;
-        window.location.reload();
+        storeInfo();
+        initPopup('К сожалению вы проиграли. Попробуйте еще раз!'); 
       } 
 
       this.init(player.x + player.w / 2, player.y - ball.r);     

@@ -1,24 +1,33 @@
 var buttonGo = document.getElementById('go');
 var buttonStop = document.getElementById('stop');
+var buttonSound = document.getElementById('sound');
 
 buttonStop.addEventListener('click', pause, false);
 buttonGo.addEventListener('click', play, false);
+buttonSound.addEventListener('click', sound, false);
 document.addEventListener('mousemove', mousemove, false);
 document.addEventListener("touchmove", touchmove, false);
 document.addEventListener('keydown', keydown, false);
 document.addEventListener('keyup', keyup, false);
 
 var play = function() {
-  
   if(!player.play) {
-    player.play = true;    
-    tick(); 
+    player.play = true;
+    tick();
     player.runBall();
   }
 }
 
 var pause = function() {
   player.play = false;
+}
+
+var sound = function() {
+  if(player.sound) {
+    player.sound = false;
+  } else {
+    player.sound = true;
+  }
 }
 
 var mousemove = function(e) {
@@ -54,6 +63,11 @@ var keydown = function(e) {
   // Right-вправо
   if(e.keyCode === 39) {
     player.dx = player.speed;
+  }
+  // Space-запустить шарик
+  if(e.keyCode === 32) {
+    play();
+    buttonGo.focus();
   }
 }
 

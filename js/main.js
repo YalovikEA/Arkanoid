@@ -13,6 +13,25 @@ function(callback) {
   window.setTimeout(callback, 1000 / 60);
 };
 
+// Изменение состояния браузера
+// **************************************************
+// var totalChanged = false;
+// var total = document.getElementById('total');
+// total.onchange = totalChanged;
+
+// function totalChanged(EO) {
+//   EO = EO || window.event;
+//   totalChanged = true; // текст изменён
+// }
+
+// window.onbeforeunload=befUnload;
+
+// function befUnload(EO) {
+//   EO = EO || window.event;
+//   if ( totalChanged )
+//     EO.returnValue = 'А у вас есть несохранённые изменения!';
+// };
+
 // **********************************************************
 var clickAudio = new Audio;
   if ( clickAudio.canPlayType("audio/mpeg")=="probably" )
@@ -61,12 +80,12 @@ var tick = function() {
 }
 
 function init() {
-  
-  grid.create(level1)
-  player.init();
+  fillAll();
+
+  grid.create(level1);
+  player.reload();
   ball.init(player.x + player.w / 2, player.y - ball.r);
 
-  fillAll();
   player.draw();
   grid.draw();
   ball.draw();
@@ -74,3 +93,5 @@ function init() {
 }
 
 init();
+
+
